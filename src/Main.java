@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Commands currentCommands = new Commands(new String[]{"Want to buy something?"});
     }
 //new test
 }
