@@ -1,15 +1,14 @@
-import java.sql.Struct;
 import java.util.Scanner;
 
 public class Commands {
 
-
-    private final Scanner scanner;
+    private final Scanner scanner = new Scanner(System.in);
+    private final String name;
     private final String[] commands;
 
 
-    public Commands(String[] commands) {
-        this.scanner = new Scanner(System.in);
+    public Commands(String name, String[] commands) {
+        this.name = name;
         this.commands = commands;
     }
 
@@ -22,20 +21,20 @@ public class Commands {
         }
     }
 
+
     public double getUserMoney() {
         double input = 0;
-        boolean isActive = true;
-        while(isActive){
+        boolean hasEnteredMoney = true;
+        while(hasEnteredMoney){
             printMessage("Please enter the amount of money you have?");
-            double userInput = scanner.nextInt();
-            if (userInput > 0.50){
-                input = userInput;
-                isActive = false;
-            } else {
+            double userInput = scanner.nextDouble();
+            if (userInput < 1) {
                 printMessage("Your gonna need more than that!");
+            } else {
+                input = userInput;
+                hasEnteredMoney = false;
             }
         }
-        scanner.nextLine();
         return input;
     }
 
