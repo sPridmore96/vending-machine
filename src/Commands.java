@@ -42,7 +42,7 @@ public class Commands {
         int userChoice = 0;
         boolean isActive = true;
         while(isActive){
-            printMessage("Please choose an item to buy");
+            printMessage("Please choose an option");
             int userInput = scanner.nextInt();
             if (userInput > 0 && userInput <= commands.length) {
                 isActive = false;

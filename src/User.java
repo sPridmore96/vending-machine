@@ -11,12 +11,13 @@ public class User {
 
     public void setUserMoney(double userMoney) {
         if (userMoney > 0.50) {
-           this.userMoney = userMoney;
+            double roundedMoney = Math.round(userMoney * 100.0) / 100.0;
+           this.userMoney = roundedMoney;
         }
     }
 
     public String toString() {
-        return String.format("\nUsers Money : £%s", userMoney);
+        return String.format("\nCustomers Money : £%s", userMoney);
     }
 
 }
